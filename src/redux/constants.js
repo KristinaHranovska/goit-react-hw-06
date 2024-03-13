@@ -1,4 +1,4 @@
-export const initialState =
+export const initialStateContacts =
     [
         {
             id: "id-1",
@@ -27,3 +27,6 @@ export const initialState =
 export const initialStateFilter = {
     name: '',
 };
+
+// export const CONTACTS = 'contacts';
+// export const FILTERS = 'filters';
