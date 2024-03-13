@@ -3,7 +3,7 @@ import { initialStateFilter } from './constants';
 
 const filtersSlice = createSlice({
     name: 'filters',
-    initialStateFilter,
+    initialState: initialStateFilter,
     reducers: {
         changeFilter(state, action) {
             state.name = action.payload;

@@ -35,23 +35,21 @@ function App() {
   };
 
   return (
-    <>
-      <div className={css.container}>
-        <h1 className={css.mainTitle}>Phonebook 📱</h1>
-        <ContactForm onAdd={addContact} />
-        <SearchBox value={search} onFilter={setSearch} />
+    <div className={css.container}>
+      <h1 className={css.mainTitle}>Phonebook 📱</h1>
+      <ContactForm onAdd={addContact} />
+      <SearchBox />
 
-        {contacts.length !== 0 ? (
-          <ContactList contactList={filterContacts} onDelete={deleteContact} />
-        ) : (
-          <p className={css.infoText}>Your phonebook is empty 😢</p>
-        )}
+      {contacts.length !== 0 ? (
+        <ContactList contactList={filterContacts} onDelete={deleteContact} />
+      ) : (
+        <p className={css.infoText}>Your phonebook is empty 😢</p>
+      )}
 
-        {filterContacts.length === 0 && contacts.length !== 0 && (
-          <p className={css.infoText}>No contacts found 😢</p>
-        )}
-      </div>
-    </>
+      {filterContacts.length === 0 && contacts.length !== 0 && (
+        <p className={css.infoText}>No contacts found 😢</p>
+      )}
+    </div>
   );
 }
 
