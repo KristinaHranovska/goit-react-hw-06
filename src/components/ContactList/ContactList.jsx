@@ -26,7 +26,7 @@ const ContactList = () => {
         <p className={css.infoText}>Your phonebook is empty 😢</p>
       )}
 
-      {!filterContacts.length && (
+      {!filterContacts.length && contacts.length !== 0 && (
         <p className={css.infoText}>No contacts found 😢</p>
       )}
     </>

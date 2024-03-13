@@ -1,5 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import { initialStateContacts } from './constants';
+import { initialStateContacts } from "./constants";
 
 const contactsSlice = createSlice({
     name: 'contacts',
