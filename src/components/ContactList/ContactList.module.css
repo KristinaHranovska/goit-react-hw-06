@@ -21,3 +21,10 @@
 .itemContact:focus {
     transform: scale(1.05);
 }
+
+.infoText {
+    font-size: 20px;
+    line-height: 1.33;
+    letter-spacing: -.01em;
+    text-align: center;
+}

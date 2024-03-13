@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
 import { BsPhone, BsPerson } from "react-icons/bs";
-import PropTypes from "prop-types";
 
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
@@ -89,10 +88,6 @@ const ContactForm = () => {
       )}
     </Formik>
   );
-};
-
-ContactForm.propTypes = {
-  onAdd: PropTypes.func,
 };
 
 export default ContactForm;
