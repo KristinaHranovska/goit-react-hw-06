@@ -28,5 +28,7 @@ export const initialStateFilter = {
     name: '',
 };
 
-// export const CONTACTS = 'contacts';
-// export const FILTERS = 'filters';
+export const initialValues = {
+    name: "",
+    number: "",
+};

@@ -17,16 +17,16 @@ function App() {
     window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
   }, [contacts]);
 
-  const addContact = (newContact) => {
-    setContacts((prevContacts) => {
-      return [...prevContacts, newContact];
-    });
-  };
+  // const addContact = (newContact) => {
+  //   setContacts((prevContacts) => {
+  //     return [...prevContacts, newContact];
+  //   });
+  // };
 
   return (
     <div className={css.container}>
       <h1 className={css.mainTitle}>Phonebook 📱</h1>
-      <ContactForm onAdd={addContact} />
+      <ContactForm />
       <SearchBox />
       <ContactList />
 
