@@ -1,7 +1,6 @@
 import "../../../node_modules/modern-normalize/modern-normalize.css";
 import contactsArray from "../../contacts.json";
 import css from "./App.module.css";
-
 import { useState, useEffect } from "react";
 
 import ContactForm from "../ContactForm/ContactForm";
