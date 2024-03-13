@@ -1,14 +1,23 @@
+import { nanoid } from "@reduxjs/toolkit";
 import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
-import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { selectContacts, selectNameFilter } from "../../redux/selectors";
 
-const ContactList = ({ contactList, onDelete }) => {
+const ContactList = () => {
+  const contacts = useSelector(selectContacts);
+  const search = useSelector(selectNameFilter);
+
+  const filterContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(search.trim().toLowerCase())
+  );
+
   return (
     <ul className={css.listContacts}>
-      {contactList.map((contact) => (
+      {filterContacts.map((contact) => (
         <li className={css.itemContact} key={nanoid()}>
-          <Contact data={contact} onDelete={onDelete} />
+          <Contact data={contact} />
         </li>
       ))}
     </ul>

@@ -1,8 +1,16 @@
 import { BsPhone, BsPerson, BsTrash } from "react-icons/bs";
 import PropTypes from "prop-types";
 import css from "./Contact.module.css";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 
-const Contact = ({ data: { id, number, name }, onDelete }) => {
+const Contact = ({ data: { id, number, name } }) => {
+  const dispatch = useDispatch();
+
+  const handleDeleteItem = () => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <div className={css.containerContac}>
       <div className={css.thumbContact}>
@@ -15,7 +23,7 @@ const Contact = ({ data: { id, number, name }, onDelete }) => {
           {number}
         </p>
       </div>
-      <button className={css.buttonDelete} onClick={() => onDelete(id)}>
+      <button className={css.buttonDelete} onClick={handleDeleteItem}>
         <BsTrash size="15" />
         Delete
       </button>

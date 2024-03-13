@@ -3,11 +3,11 @@ import { IoCloseOutline } from "react-icons/io5";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilter } from "../../redux/filtersSlice";
-import { getSearchFilter } from "../../redux/selectors";
+import { selectNameFilter } from "../../redux/selectors";
 import { initialStateFilter } from "../../redux/constants";
 
 const SearchBox = () => {
-  const searchValue = useSelector(getSearchFilter);
+  const searchValue = useSelector(selectNameFilter);
   const dispatch = useDispatch();
 
   const handelInputSearch = (event) => {
@@ -16,6 +16,7 @@ const SearchBox = () => {
 
   const cleanInput = () => {
     dispatch(changeFilter(initialStateFilter.name));
+    console.log("Dispatched filter value:", event.target.value);
   };
 
   return (

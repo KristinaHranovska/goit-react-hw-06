@@ -1,1 +1,2 @@
-export const getSearchFilter = (state) => state.name.name;
+export const selectNameFilter = (state) => state.filters.name;
+export const selectContacts = (state) => state.contacts;
